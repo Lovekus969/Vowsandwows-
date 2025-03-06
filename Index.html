@@ -16,6 +16,7 @@
     </div>
 
     <!-- Navigation -->
+<!-- Navigation Bar -->
 <nav>
     <ul class="nav-list">
         <li><a href="#home">Home</a></li>
@@ -24,14 +25,35 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact Us</a></li>
     </ul>
+    <button class="login-button" onclick="openModal()">Login</button>
 </nav>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Employee Login</h2>
+        <form method="POST" action="login">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+
+
 
     </nav> <!-- Video Section -->
     <section id="video-section">
        <div class="video-content">
         <div class="video-container">
             <video id="video" class="video" autoplay muted loop>
-                <source src="Mmuu.mp4" type="video/mp4">
+                <source src="Updated.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -169,7 +191,23 @@
     <script src="chatbot.js"></script>
     <!-- At the bottom, just before the closing </body> tag -->
     <script src="language-switcher.js"></script>
-
+    <script>
+        function openModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+    
+        function closeModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+    
+        // Close the modal when clicking outside the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
