@@ -175,6 +175,29 @@
     <footer>
         <p>&copy; 2025 The Vows and Wows. All Rights Reserved.</p>
     </footer>
+     <!-- Back to Top Button -->
+      <button id="backToTop">↑ Back to Top</button>
+      <script>
+        // Get the button
+        const backToTopBtn = document.getElementById("backToTop");
+        
+        // Show or hide the button based on scroll position
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+        
+        // Scroll to the top when the button is clicked
+        backToTopBtn.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+        </script>
 
  <script>
         // JavaScript to handle form submission
